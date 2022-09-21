@@ -1,0 +1,35 @@
+button[disabled]{
+    background-color: #59baf7;
+}
+
+button[disabled]:hover{
+    background-color: #2a7db1;
+}
+
+.tweetBox__tweetButton:hover{
+    background-color: #d965f7;
+}
+
+.indicator{
+    position: relative;
+}
+.replylength-indicator{
+    font-size: 17px;
+    position: absolute;
+    left: 680px;
+    bottom: 6px;
+}
+
+.valid-input{
+    color: #0b99f1;
+}
+
+.tweetbox{
+    background-color: rgb(238, 240, 241);
+    background-image: linear-gradient( rgb(213, 234, 243), rgb(225, 187, 243));
+}
+textarea{
+    background-color: rgb(238, 240, 241);
+    background-image: linear-gradient(rgb(213, 226, 238), rgb(230, 240, 245));
+
+}

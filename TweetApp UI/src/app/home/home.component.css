@@ -1,0 +1,13 @@
+ /* .main-container{
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    justify-content: flex-start;
+} */
+.innser{
+    background-color: rgb(213, 234, 243);
+    background-image: linear-gradient( rgb(213, 234, 243), rgb(225, 187, 243));
+    display: flex;
+    justify-content: center;
+}
+

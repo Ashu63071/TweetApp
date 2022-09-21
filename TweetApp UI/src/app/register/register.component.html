@@ -1,0 +1,217 @@
+
+<div class="register">
+  <div class="bg-color">
+    <div class="headings">
+      <h1><strong>TweetApp</strong></h1>
+     <br />
+    </div>
+    <div style="color: red; margin-left: 250px;" *ngIf="errorMessage">
+      {{ errorMessage }}
+    </div>
+    <div style="color: rgb(21, 255, 0); margin-left: 250px;" *ngIf="successfullMessage">
+      {{ successfullMessage }}
+    </div>
+    <div class="main">  	
+      <input type="checkbox" id="chk" aria-hidden="true">
+        <div class="login">
+				  <form #authForm="ngForm" (ngSubmit)="onLogin(authForm)" autocomplete="off">
+					<label class ="unique" for="chk" aria-hidden="true">Login here!</label>
+          <div class="form-group">
+           
+            <input type="email" 
+            class="form-control" 
+            id="email"
+            name="email" 
+            placeholder="Enter email"
+            required
+            email
+            ngModel>
+          </div>
+          <div class="form-group">
+            <input 
+              type="password" 
+              class="form-control" 
+              id="password" 
+              placeholder="Password"
+              name="password"
+              ngModel
+              required
+              minlength="6">
+          </div>
+          <div class="login-button">
+            <button class="btn btn-primary" [disabled]="!authForm.valid">Login</button>
+            <a class="forgot-password" [routerLink]="['reset-password']">Forgot Password ?</a>
+          </div>
+				  </form>
+			  </div>
+   
+      <div class="signup2">
+        <form #signUpForm="ngForm" (ngSubmit)="onSignUp(signUpForm)">
+          <label class ="unique" for="chk" aria-hidden="true">Register!!</label>
+          <div class="form-group">
+            <input 
+            type="email" 
+            class="form-control" 
+            id="email"
+            name="email" 
+            placeholder="Enter email"
+            required
+            email
+            ngModel>
+          </div><hr>
+          <div class="form-group">
+            <input 
+              type="password" 
+              class="form-control" 
+              id="password" 
+              placeholder="Password"
+              name="password"
+              ngModel
+              required
+              minlength="6">
+          </div>
+          <div class="form-group">
+            <input 
+              type="password" 
+              class="form-control" 
+              id="confirmPassword" 
+              placeholder="Confirm Password"
+              name="confirmPassword"
+              ngModel
+              required
+              minlength="6">
+          </div><hr>
+          <div class="row">
+            <div class="col">
+              <input 
+                type="text" 
+                class="form-control" 
+                id="firstName" 
+                placeholder="First Name"
+                name="firstName"
+                ngModel
+                required
+                >
+            </div>
+            <div class="col">
+                <input 
+                  type="text" 
+                  class="form-control" 
+                  id="lastName" 
+                  placeholder="Last Name"
+                  name="lastName"
+                  ngModel
+                  >
+            </div>
+          </div><hr>
+          <div class="form-group">
+            <label style="justify-content: center;
+            display: flex;
+            margin: 20px auto;" for="dateOfBirth">Date Of Birth</label>
+            <input 
+              type="date" 
+              class="form-control" 
+              required 
+              name="dateOfBirth" 
+              id="dateOfBirth"
+              ngModel>
+          </div>
+          <hr>
+          <label style="justify-content: center;
+          display: flex;
+          margin: 20px auto;" for="gender">Gender</label>
+          <div class="form-group-gender">
+            
+            <div class="form-check-gender">
+              <label style = "color: #3c4146;" class="form-check-label" for="gender">
+              Male
+              <input class="form-check-input" type="radio" name="gender" value="Male" id="genderMale" ngModel>
+              
+              </label>
+            </div>
+            <div class="form-check-gender">
+              <label style = "color: #3c4146;" class="form-check-label" for="gender">  Female
+              <input class="form-check-input" type="radio" name="gender" value="Female" id="genderFemale" ngModel>
+             
+              </label>
+            </div>
+          </div>
+
+          <hr>
+
+          <div class="row">
+            <div class="col">
+                <select class="form-select" 
+                        required 
+                        name="question"
+                        ngModel
+                        #question="ngModel"
+                        >
+                    <option value="" disabled> - Select Security Question - </option>
+                    <option *ngFor="let option of options" [value]="option.key">{{ option.value }}</option>
+                </select>
+            </div>
+          </div>
+          <div class="row">
+              <div class="col">
+                  <input 
+                      type="text" 
+                      class="form-control" 
+                      placeholder="Security Selected Question's Answer" 
+                      required
+                      name="answer"
+                      ngModel
+                      #answer="ngModel">
+              </div>
+           </div>
+           <hr>
+          <div class="login-button">
+            <button type="submit" class="btn btn-primary">Sign Up</button>
+          </div>
+        </form>
+  
+      </div>
+			</div>
+   </div>
+
+<br>
+<br>
+
+<div class="footer-dark">
+  <footer>
+      <div class="container">
+          <div class="row">
+              <div class="col-sm-6 col-md-3 item">
+                  <h3>Services</h3>
+                  <ul>
+                      <li><a href="#">Web design</a></li>
+                      <li><a href="#">Development</a></li>
+                      <li><a href="#">Hosting</a></li>
+                  </ul>
+              </div>
+              <div class="col-sm-6 col-md-3 item">
+                  <h3>About</h3>
+                  <ul>
+                      <li><a href="#">Company</a></li>
+                      <li><a href="#">Team</a></li>
+                      <li><a href="#">Careers</a></li>
+                  </ul>
+              </div>
+              <div class="col-md-6 item text">
+                  <h3>Company Name</h3>
+                  <p>Praesent sed lobortis mi. Suspendisse vel placerat ligula. Vivamus ac sem lacus. Ut vehicula rhoncus elementum. Etiam quis tristique lectus. Aliquam in arcu eget velit pulvinar dictum vel in justo.</p>
+              </div>
+          </div>
+      </div>
+         
+      
+  </footer>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+
+
+
+     
+      
+ 

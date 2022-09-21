@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  com.tweetapp:
+    image: ${DOCKER_REGISTRY-}comtweetapp
+    build:
+      context: .
+      dockerfile: com.tweetapp/Dockerfile
